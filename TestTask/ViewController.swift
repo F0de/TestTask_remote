@@ -21,7 +21,6 @@ class ViewController: UIViewController {
     private let lowerText = UILabel()
     private let searchBar = UISearchBar()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
                         
