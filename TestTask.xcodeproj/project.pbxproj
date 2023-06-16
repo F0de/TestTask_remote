@@ -20,6 +20,7 @@
 		F5C6A7102A3B814C00B400AC /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C6A70F2A3B814C00B400AC /* SearchBar.swift */; };
 		F5C6A7122A3BBB4800B400AC /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C6A7112A3BBB4800B400AC /* ProductCell.swift */; };
 		F5C6A7142A3BC72900B400AC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C6A7132A3BC72900B400AC /* Model.swift */; };
+		F5C6A71A2A3C897400B400AC /* AddMealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C6A7192A3C897400B400AC /* AddMealView.swift */; };
 		F5ED82872A373E2400D89D44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED82862A373E2400D89D44 /* AppDelegate.swift */; };
 		F5ED82892A373E2400D89D44 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED82882A373E2400D89D44 /* SceneDelegate.swift */; };
 		F5ED828B2A373E2400D89D44 /* AddMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED828A2A373E2400D89D44 /* AddMealViewController.swift */; };
@@ -43,6 +44,7 @@
 		F5C6A70F2A3B814C00B400AC /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		F5C6A7112A3BBB4800B400AC /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		F5C6A7132A3BC72900B400AC /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		F5C6A7192A3C897400B400AC /* AddMealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealView.swift; sourceTree = "<group>"; };
 		F5ED82832A373E2400D89D44 /* TestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5ED82862A373E2400D89D44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5ED82882A373E2400D89D44 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,9 +102,9 @@
 		F5C6A7152A3BC73500B400AC /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F5ED828A2A373E2400D89D44 /* AddMealViewController.swift */,
 				F5C6A70F2A3B814C00B400AC /* SearchBar.swift */,
 				F5C6A7112A3BBB4800B400AC /* ProductCell.swift */,
+				F5C6A7192A3C897400B400AC /* AddMealView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -113,6 +115,23 @@
 				F5C6A7132A3BC72900B400AC /* Model.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F5C6A7172A3C750200B400AC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F5ED828F2A373E2500D89D44 /* Assets.xcassets */,
+				F5ED82912A373E2500D89D44 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F5C6A7182A3C754100B400AC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F5ED828A2A373E2400D89D44 /* AddMealViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		F5ED827A2A373E2400D89D44 = {
@@ -136,13 +155,13 @@
 		F5ED82852A373E2400D89D44 /* TestTask */ = {
 			isa = PBXGroup;
 			children = (
-				F5C6A6FC2A3B43D300B400AC /* Fonts */,
-				F5C6A7152A3BC73500B400AC /* Views */,
-				F5C6A7162A3BC76A00B400AC /* Model */,
 				F5ED82862A373E2400D89D44 /* AppDelegate.swift */,
 				F5ED82882A373E2400D89D44 /* SceneDelegate.swift */,
-				F5ED828F2A373E2500D89D44 /* Assets.xcassets */,
-				F5ED82912A373E2500D89D44 /* LaunchScreen.storyboard */,
+				F5C6A6FC2A3B43D300B400AC /* Fonts */,
+				F5C6A7152A3BC73500B400AC /* Views */,
+				F5C6A7182A3C754100B400AC /* Controller */,
+				F5C6A7162A3BC76A00B400AC /* Model */,
+				F5C6A7172A3C750200B400AC /* Resources */,
 				F5ED82942A373E2500D89D44 /* Info.plist */,
 			);
 			path = TestTask;
@@ -274,6 +293,7 @@
 				F5ED828B2A373E2400D89D44 /* AddMealViewController.swift in Sources */,
 				F5C6A7102A3B814C00B400AC /* SearchBar.swift in Sources */,
 				F5C6A7122A3BBB4800B400AC /* ProductCell.swift in Sources */,
+				F5C6A71A2A3C897400B400AC /* AddMealView.swift in Sources */,
 				F5C6A7142A3BC72900B400AC /* Model.swift in Sources */,
 				F5ED82872A373E2400D89D44 /* AppDelegate.swift in Sources */,
 				F5ED82892A373E2400D89D44 /* SceneDelegate.swift in Sources */,

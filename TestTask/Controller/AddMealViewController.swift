@@ -9,47 +9,71 @@ import SnapKit
 import UIKit
 
 //MARK: - AddMealViewController
-final class AddMealViewController: UIViewController {
-    
-    //MARK: - Private Property
-    private let navigationBar = UINavigationBar()
-    private let tableView = UITableView()
-//    private let header = UIView()
-    
-    private let whiteView = UIView()
-    private let exitButton = UIButton(type: .system)
-    private let infoButton = UIButton(type: .system)
-    private let nextViewButton = UIButton(type: .custom)
-    private let upperText = UILabel()
-    private let lowerText = UILabel()
-    private let searchBar = SearchBar(placeholder: "Пошук")
-    private let segmentControl = UISegmentedControl(items:["Пошук","Обране","Мої блюда"])
-    
-    private let searchBarUI = UISearchBar()
+class AddMealViewController: ViewController<AddMealView> {
     
     //MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
+    }
+    
+    //MARK: - Actions
+    @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
         
     }
     
-    //MARK: - Setup Views Methods
+}
+
+open class ViewController<ViewType: UIView>: UIViewController, ViewLoadable {
     
-    private func setupNavigationBar() {
+    public typealias MainView = ViewType
+    
+    open override func loadView() {
+        let customView = MainView()
+        view = customView
+    }
+}
+
+class AddMealView: UIView {
+    //MARK: - Properties
+    let navigationBar = UINavigationBar()
+    let tableView = UITableView()
+//    let header = UIView()
+    let whiteView = UIView()
+    let exitButton = UIButton(type: .system)
+    let infoButton = UIButton(type: .system)
+    let nextViewButton = UIButton(type: .custom)
+    let upperText = UILabel()
+    let lowerText = UILabel()
+    let searchBar = SearchBar(placeholder: "Пошук")
+    let segmentControl = UISegmentedControl(items:["Пошук","Обране","Мої блюда"])
+    let searchBarUI = UISearchBar()
+    
+    //MARK: - Initializers
+    init() {
+        super.init(frame: .zero)
+        
+        setupViews()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    //MARK: - Setup Views Methods
+    func setupNavigationBar() {
         //        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         
         let navigationItem = UINavigationItem(title: "My Screen")
         //        navigationItem.leftBarButtonItem = exitButton
         
-        navigationBar.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 44)
+        navigationBar.frame = CGRect(x: 0, y: 0, width: frame.width, height: 44)
         
         navigationBar.setItems([navigationItem], animated: false)
         
-        view.addSubview(navigationBar)
+        addSubview(navigationBar)
     }
     
-    private func setupUITableView() {
+    func setupUITableView() {
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -59,37 +83,37 @@ final class AddMealViewController: UIViewController {
         tableView.separatorInset = .init(top: 0, left: 0, bottom: 0, right: 0)
         
 //        tableView.tableHeaderView = header
-        view.addSubview(tableView)
+        addSubview(tableView)
     }
     
-//    private func setupHeaderUIView() {
+//    func setupHeaderUIView() {
 //
 //        header.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50)
 //        header.backgroundColor = .yellow
 //
 //    }
     
-    private func setupWhiteView() {
+    func setupWhiteView() {
         whiteView.backgroundColor = .white
         whiteView.layer.cornerRadius = 25
         whiteView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
     }
     
-    private func setupExitUIButton() {
+    func setupExitUIButton() {
         let xmarkSymbol = UIImage(systemName: "xmark")
         let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 11)
         exitButton.setImage(xmarkSymbol?.withConfiguration(symbolConfiguration), for: .normal)
         exitButton.tintColor = .black
     }
     
-    private func setupInfoUIButton() {
+    func setupInfoUIButton() {
         let ellipsisSymbol = UIImage(systemName: "ellipsis")
         let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 14)
         infoButton.setImage(ellipsisSymbol?.withConfiguration(symbolConfiguration), for: .normal)
         infoButton.tintColor = .black
     }
     
-    private func setupNextViewUIButton() {
+    func setupNextViewUIButton() {
         let arrowRightSymbol = UIImage(systemName: "arrow.right")
         let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 32)
         nextViewButton.setImage(arrowRightSymbol?.withConfiguration(symbolConfiguration), for: .normal)
@@ -98,7 +122,7 @@ final class AddMealViewController: UIViewController {
         nextViewButton.layer.cornerRadius = 27.5
     }
     
-    private func setupTopBarText() {
+    func setupTopBarText() {
         upperText.text = "ДОДАТИ ЇЖУ"
         upperText.textColor = UIColor(red: 249/255, green: 74/255, blue: 57/255, alpha: 1)
         upperText.font = UIFont(name: "FixelText-Medium", size: 12)
@@ -108,11 +132,11 @@ final class AddMealViewController: UIViewController {
         lowerText.font = UIFont(name: "FixelText-SemiBold", size: 20)
     }
     
-    private func setupUISegmentPicker() {
+    func setupUISegmentPicker() {
         segmentControl.layer.cornerRadius = 12
         segmentControl.layer.masksToBounds = true
         segmentControl.selectedSegmentIndex = 0
-        segmentControl.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
+//        segmentControl.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
         segmentControl.backgroundColor = UIColor(red: 245/255, green: 247/255, blue: 250/255, alpha: 1)
         segmentControl.selectedSegmentTintColor = UIColor(red: 249/255, green: 74/255, blue: 57/255, alpha: 1)
         
@@ -129,19 +153,10 @@ final class AddMealViewController: UIViewController {
         segmentControl.setTitleTextAttributes(selectedTextAttributes, for: .selected)
     }
     
-    //MARK: - Actions
-    @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
-        
-    }
-    
-}
-
-
-//MARK: - Setting Views
-private extension AddMealViewController {
-    func setupView() {
-        view.tintColor = UIColor(red: 249/255, green: 74/255, blue: 57/255, alpha: 1)
-        view.backgroundColor = UIColor(red: 245/255, green: 247/255, blue: 250/255, alpha: 1)
+    //MARK: - Setting Views
+    func setupViews() {
+        tintColor = UIColor(red: 249/255, green: 74/255, blue: 57/255, alpha: 1)
+        backgroundColor = UIColor(red: 245/255, green: 247/255, blue: 250/255, alpha: 1)
         
         //        setupNavigationBar()
         setupUITableView()
@@ -157,24 +172,20 @@ private extension AddMealViewController {
         
         setupLayout()
     }
-}
-
-//MARK: - Setting
-private extension AddMealViewController {
+    
+    //MARK: - Setting
     func addSubViews() {
-        view.addSubview(whiteView)
-        view.addSubview(exitButton)
-        view.addSubview(infoButton)
-        view.addSubview(nextViewButton)
-        view.addSubview(upperText)
-        view.addSubview(lowerText)
-        view.addSubview(searchBar)
-        view.addSubview(segmentControl)
+        addSubview(whiteView)
+        addSubview(exitButton)
+        addSubview(infoButton)
+        addSubview(nextViewButton)
+        addSubview(upperText)
+        addSubview(lowerText)
+        addSubview(searchBar)
+        addSubview(segmentControl)
     }
-}
-
-//MARK: - Layout
-private extension AddMealViewController {
+    
+    //MARK: - Layout
     func setupLayout() {
         
         whiteView.snp.makeConstraints { make in
@@ -185,34 +196,34 @@ private extension AddMealViewController {
         }
         
         exitButton.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(15)
+            make.top.equalTo(safeAreaLayoutGuide).offset(15)
             make.left.equalToSuperview().offset(20)
         }
         
         infoButton.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(15)
+            make.top.equalTo(safeAreaLayoutGuide).offset(15)
             make.right.equalToSuperview().offset(-20)
         }
         
         nextViewButton.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(60)
+            make.top.equalTo(safeAreaLayoutGuide).offset(60)
             make.right.equalToSuperview().offset(-20)
             make.width.equalTo(55)
             make.height.equalTo(55)
         }
         
         upperText.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(60)
+            make.top.equalTo(safeAreaLayoutGuide).offset(60)
             make.left.equalToSuperview().offset(15)
         }
         
         lowerText.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(80)
+            make.top.equalTo(safeAreaLayoutGuide).offset(80)
             make.left.equalToSuperview().offset(15)
         }
         
         searchBar.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(140)
+            make.top.equalTo(safeAreaLayoutGuide).offset(140)
             make.leading.equalToSuperview().offset(15)
             make.trailing.equalToSuperview().offset(-15)
             make.height.equalTo(48)
@@ -234,13 +245,13 @@ private extension AddMealViewController {
     }
 }
 
-extension AddMealViewController: UITableViewDelegate {
+extension AddMealView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
-extension AddMealViewController: UITableViewDataSource {
+extension AddMealView: UITableViewDataSource {
     
 //    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 //        return 20
@@ -284,5 +295,19 @@ extension UIView {
         let maskLayer = CAShapeLayer()
         maskLayer.path = path.cgPath
         layer.mask = maskLayer
+    }
+}
+
+public protocol ViewLoadable {
+    associatedtype MainView: UIView
+}
+
+extension ViewLoadable where Self: UIViewController {
+    /// The UIViewController's custom view.
+    public var mainView: MainView {
+        guard let customView = view as? MainView else {
+            fatalError("Expected view to be of type \(MainView.self) but got \(type(of: view)) instead")
+        }
+        return customView
     }
 }
