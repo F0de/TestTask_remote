@@ -12,8 +12,8 @@ import SnapKit
 final class SearchBar: UITextField {
     
     //MARK: - Private Propertiy
-    private let padding = UIEdgeInsets(top: 0, left: 45, bottom: 0, right: 15)
-    private let paddingLeftView = UIEdgeInsets(top: 13, left: 15, bottom: 13, right: 347)
+    private let padding = UIEdgeInsets(top: 0, left: 52, bottom: 0, right: 15)
+    private let paddingLeftView = UIEdgeInsets(top: 12, left: 16, bottom: 12, right: 330)
     
     //MARK: - Initializers
     init(placeholder: String) {
@@ -45,18 +45,23 @@ final class SearchBar: UITextField {
     
     //MARK: - Private Methods
     private func setupSearchBar(placeholder: String) {
-        backgroundColor = UIColor(red: 245/255, green: 247/255, blue: 250/255, alpha: 1)
-        textColor = UIColor(red: 140/255, green: 148/255, blue: 166/255, alpha: 1)
+        backgroundColor = UIColor(hex: "#F5F7FA")
+        textColor = UIColor(hex: "#8C94A6")
         layer.cornerRadius = 12
-        leftView = UIImageView(image: UIImage(named: "search-loap"))
+        let imageView = UIImageView(image: UIImage(named: "search-loap"))
+        imageView.contentMode = .center
+        let iconSize = CGSize(width: 24, height: 24)
+        imageView.frame = CGRect(x: 0, y: 0, width: iconSize.width, height: iconSize.height)
+        let offsetView = UIView(frame: CGRect(x: 0, y: 0, width: iconSize.width, height: iconSize.height))
+        offsetView.addSubview(imageView)
+        leftView = offsetView
         leftViewMode = .always
         font = UIFont(name: "FixelText-Regular", size: 16) ?? UIFont.systemFont(ofSize: 16)
-        
         
         // Настройка шрифта для placeholder
         let attributes: [NSAttributedString.Key: Any] = [
             .font: UIFont(name: "FixelText-Regular", size: 16) ?? UIFont.systemFont(ofSize: 16),
-            .foregroundColor: UIColor(red: 140/255, green: 148/255, blue: 166/255, alpha: 1)
+            .foregroundColor: UIColor(hex: "#8C94A6")
         ]
         attributedPlaceholder = NSAttributedString(string: placeholder, attributes: attributes)
     }

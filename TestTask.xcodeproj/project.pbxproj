@@ -20,7 +20,10 @@
 		F5C6A7122A3BBB4800B400AC /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C6A7112A3BBB4800B400AC /* ProductCell.swift */; };
 		F5C6A7142A3BC72900B400AC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C6A7132A3BC72900B400AC /* Model.swift */; };
 		F5C6A71A2A3C897400B400AC /* AddMealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C6A7192A3C897400B400AC /* AddMealView.swift */; };
-		F5C6A71D2A3C8F3000B400AC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F5C6A71C2A3C8F3000B400AC /* SnapKit */; };
+		F5C6A7202A3C960000B400AC /* BetterSegmentedControl in Frameworks */ = {isa = PBXBuildFile; productRef = F5C6A71F2A3C960000B400AC /* BetterSegmentedControl */; };
+		F5C6A7232A3C9D3300B400AC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C6A7222A3C9D3300B400AC /* UIColorExtension.swift */; };
+		F5C6A7282A3DDEDA00B400AC /* UICornerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C6A7272A3DDEDA00B400AC /* UICornerExtension.swift */; };
+		F5C6A72B2A3DE10700B400AC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F5C6A72A2A3DE10700B400AC /* SnapKit */; };
 		F5ED82872A373E2400D89D44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED82862A373E2400D89D44 /* AppDelegate.swift */; };
 		F5ED82892A373E2400D89D44 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED82882A373E2400D89D44 /* SceneDelegate.swift */; };
 		F5ED828B2A373E2400D89D44 /* AddMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED828A2A373E2400D89D44 /* AddMealViewController.swift */; };
@@ -42,6 +45,8 @@
 		F5C6A7112A3BBB4800B400AC /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		F5C6A7132A3BC72900B400AC /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		F5C6A7192A3C897400B400AC /* AddMealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealView.swift; sourceTree = "<group>"; };
+		F5C6A7222A3C9D3300B400AC /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		F5C6A7272A3DDEDA00B400AC /* UICornerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICornerExtension.swift; sourceTree = "<group>"; };
 		F5ED82832A373E2400D89D44 /* TestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5ED82862A373E2400D89D44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5ED82882A373E2400D89D44 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,7 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5C6A71D2A3C8F3000B400AC /* SnapKit in Frameworks */,
+				F5C6A7202A3C960000B400AC /* BetterSegmentedControl in Frameworks */,
+				F5C6A72B2A3DE10700B400AC /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,9 +88,9 @@
 		F5C6A7152A3BC73500B400AC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F5C6A7192A3C897400B400AC /* AddMealView.swift */,
 				F5C6A70F2A3B814C00B400AC /* SearchBar.swift */,
 				F5C6A7112A3BBB4800B400AC /* ProductCell.swift */,
-				F5C6A7192A3C897400B400AC /* AddMealView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -115,6 +121,15 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		F5C6A7212A3C9D1500B400AC /* UIExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				F5C6A7222A3C9D3300B400AC /* UIColorExtension.swift */,
+				F5C6A7272A3DDEDA00B400AC /* UICornerExtension.swift */,
+			);
+			path = UIExtensions;
+			sourceTree = "<group>";
+		};
 		F5ED827A2A373E2400D89D44 = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +151,7 @@
 			children = (
 				F5ED82862A373E2400D89D44 /* AppDelegate.swift */,
 				F5ED82882A373E2400D89D44 /* SceneDelegate.swift */,
+				F5C6A7212A3C9D1500B400AC /* UIExtensions */,
 				F5C6A6FC2A3B43D300B400AC /* Fonts */,
 				F5C6A7152A3BC73500B400AC /* Views */,
 				F5C6A7182A3C754100B400AC /* Controller */,
@@ -162,7 +178,8 @@
 			);
 			name = TestTask;
 			packageProductDependencies = (
-				F5C6A71C2A3C8F3000B400AC /* SnapKit */,
+				F5C6A71F2A3C960000B400AC /* BetterSegmentedControl */,
+				F5C6A72A2A3DE10700B400AC /* SnapKit */,
 			);
 			productName = TestTask;
 			productReference = F5ED82832A373E2400D89D44 /* TestTask.app */;
@@ -193,7 +210,8 @@
 			);
 			mainGroup = F5ED827A2A373E2400D89D44;
 			packageReferences = (
-				F5C6A71B2A3C8F3000B400AC /* XCRemoteSwiftPackageReference "SnapKit" */,
+				F5C6A71E2A3C960000B400AC /* XCRemoteSwiftPackageReference "BetterSegmentedControl" */,
+				F5C6A7292A3DE10700B400AC /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = F5ED82842A373E2400D89D44 /* Products */;
 			projectDirPath = "";
@@ -232,7 +250,9 @@
 			files = (
 				F5ED828B2A373E2400D89D44 /* AddMealViewController.swift in Sources */,
 				F5C6A7102A3B814C00B400AC /* SearchBar.swift in Sources */,
+				F5C6A7282A3DDEDA00B400AC /* UICornerExtension.swift in Sources */,
 				F5C6A7122A3BBB4800B400AC /* ProductCell.swift in Sources */,
+				F5C6A7232A3C9D3300B400AC /* UIColorExtension.swift in Sources */,
 				F5C6A71A2A3C897400B400AC /* AddMealView.swift in Sources */,
 				F5C6A7142A3BC72900B400AC /* Model.swift in Sources */,
 				F5ED82872A373E2400D89D44 /* AppDelegate.swift in Sources */,
@@ -454,7 +474,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F5C6A71B2A3C8F3000B400AC /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		F5C6A71E2A3C960000B400AC /* XCRemoteSwiftPackageReference "BetterSegmentedControl" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gmarm/BetterSegmentedControl.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		F5C6A7292A3DE10700B400AC /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -465,9 +493,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F5C6A71C2A3C8F3000B400AC /* SnapKit */ = {
+		F5C6A71F2A3C960000B400AC /* BetterSegmentedControl */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F5C6A71B2A3C8F3000B400AC /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = F5C6A71E2A3C960000B400AC /* XCRemoteSwiftPackageReference "BetterSegmentedControl" */;
+			productName = BetterSegmentedControl;
+		};
+		F5C6A72A2A3DE10700B400AC /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F5C6A7292A3DE10700B400AC /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
