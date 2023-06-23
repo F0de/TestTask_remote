@@ -8,7 +8,6 @@
 import Foundation
 
 struct Product {
-    var id: String
     var name: String
     var weight: Int
     var calories: Int
@@ -22,3 +21,13 @@ class ProductList {
         self.products = products
     }
 }
+
+#if DEBUG
+extension Product {
+    static var data = [
+    Product(name: "Вівсянка", weight: 230, calories: 140, addedDate: "Сьогодні"),
+    Product(name: "Гречка", weight: 250, calories: 160, addedDate: "Вчора")
+//    Product(name: "Вівсянка", weight: 230, calories: 140, addedDate: "16")
+    ]
+}
+#endif

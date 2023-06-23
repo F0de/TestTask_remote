@@ -16,9 +16,9 @@ class AddMealViewController: ViewController<AddMealView> {
     }
     
     //MARK: - Actions
-    @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
-        
-    }
+//    @objc func segmentedControlValueChanged(_ sender: BetterSegmentedControl) {
+//        
+//    }
     
 }
 

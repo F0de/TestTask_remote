@@ -11,17 +11,16 @@ import BetterSegmentedControl
 
 class AddMealView: UIView {
     //MARK: - Properties
-    let navigationBar = UINavigationBar()
-    let tableView = UITableView()
-    let whiteView = UIView()
-    let exitButton = UIButton(type: .system)
-    let infoButton = UIButton(type: .system)
-    let nextViewButton = UIButton(type: .custom)
-    let upperText = UILabel()
-    let lowerText = UILabel()
-    var searchBar = SearchBar(placeholder: "Пошук")
-    let segmentControl = BetterSegmentedControl()
-    let searchBarUI = UISearchBar()
+    lazy var tableView = UITableView()
+    lazy var whiteView = UIView()
+    lazy var exitButton = UIButton(type: .system)
+    lazy var infoButton = UIButton(type: .system)
+    lazy var nextViewButton = UIButton(type: .custom)
+    lazy var upperText = UILabel()
+    lazy var lowerText = UILabel()
+    lazy var searchBar = SearchBar(placeholder: "Пошук")
+    lazy var segmentControl = BetterSegmentedControl()
+    lazy var searchBarUI = UISearchBar()
     
     //MARK: - Initializers
     init() {
@@ -35,18 +34,6 @@ class AddMealView: UIView {
     }
     
     //MARK: - Setup Views Methods
-    func setupNavigationBar() {
-        //        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        
-        let navigationItem = UINavigationItem(title: "My Screen")
-        //        navigationItem.leftBarButtonItem = exitButton
-        
-        navigationBar.frame = CGRect(x: 0, y: 0, width: frame.width, height: 44)
-        
-        navigationBar.setItems([navigationItem], animated: false)
-        
-        addSubview(navigationBar)
-    }
     
     func setupUITableView() {
         tableView.delegate = self
@@ -55,8 +42,8 @@ class AddMealView: UIView {
         tableView.register(ProductCell.self, forCellReuseIdentifier: ProductCell.identifier)
         
         tableView.backgroundColor = .clear
-        tableView.separatorInset = .init(top: 0, left: 0, bottom: 0, right: 0)
         tableView.headerView(forSection: 0)?.tintColor = .white
+        tableView.separatorStyle = .none
     }
     
     func setupWhiteView() {
@@ -104,16 +91,18 @@ class AddMealView: UIView {
             normalBackgroundColor: .clear,
             normalFont: UIFont(name: "FixelText-SemiBold", size: 12),
             normalTextColor: UIColor(hex: "#8C94A6"),
-            selectedBackgroundColor: UIColor(hex: "#F94A39"),
             selectedFont: UIFont(name: "FixelText-SemiBold", size: 12),
-            selectedTextColor: .white)
+            selectedTextColor: .white
+        )
+        segmentControl.indicatorView.backgroundColor = UIColor(hex: "#F94A39")
         segmentControl.setOptions([.backgroundColor(UIColor(hex: "#F5F7FA")), .cornerRadius(12)])
+        segmentControl.addTarget(self, action: #selector(segmentedControlValueChanged), for: .valueChanged)
     }
     
     //MARK: - Setting Views
     func setupViews() {
         tintColor = UIColor(red: 249/255, green: 74/255, blue: 57/255, alpha: 1)
-        backgroundColor = UIColor(red: 245/255, green: 247/255, blue: 250/255, alpha: 1)
+        backgroundColor = UIColor(hex: "#F5F7FA")
         
         setupWhiteView()
         setupExitUIButton()
@@ -193,14 +182,23 @@ class AddMealView: UIView {
         }
         
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(whiteView.snp_bottomMargin)
-            make.leading.equalToSuperview().offset(15)
-            make.trailing.equalToSuperview().offset(-15)
+            make.top.equalTo(whiteView.snp.bottom)
+            make.left.equalToSuperview().offset(15)
+            make.right.equalToSuperview().offset(-15)
             make.bottom.equalToSuperview()
         }
+        
+        
     }
+    
+    //MARK: - Actions
+    @objc func segmentedControlValueChanged(_ sender: BetterSegmentedControl) {
+        
+    }
+    
 }
 
+//MARK: - Extensions
 extension AddMealView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -211,22 +209,15 @@ extension AddMealView: UITableViewDelegate {
 }
 
 extension AddMealView: UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 56))
-        headerView.backgroundColor = .clear
+        headerView.backgroundColor = UIColor(hex: "#F5F7FA")
         
         let label = UILabel(frame: CGRect(x: 15, y: 0, width: tableView.frame.width - 30, height: 56))
         label.text = "Останні продукти \(section)"
         label.textColor = UIColor(hex: "#222631")
         label.font = UIFont(name: "FixelText-Medium", size: 16)
         headerView.addSubview(label)
-        
-        if section == 0 {
-            tableView.separatorStyle = .none
-        } else {
-            tableView.separatorStyle = .singleLine
-        }
         
         return headerView
     }
@@ -246,7 +237,10 @@ extension AddMealView: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductCell.identifier, for: indexPath) as? ProductCell else {
             fatalError("The TableView cold not dequeue a ProductCell in AddMealViewController")
         }
-        cell.textLabel!.text = "Вівсянка"
+        
+        cell.textLabel?.text = Product.data[indexPath.row].name
+        cell.detailTextLabel?.text = "\(Product.data[indexPath.row].weight)г, \(Product.data[indexPath.row].calories) ккал"
+        
         
         if indexPath.row == 0 {
             // First cell in section
@@ -254,12 +248,13 @@ extension AddMealView: UITableViewDataSource {
         } else if indexPath.row == 2 - 1 {
             // Last cell in section
             cell.roundCorners([.bottomLeft, .bottomRight], radius: 16)
-            cell.separatorInset = .init(top: 0, left: 0, bottom: 0, right: 370)
+            cell.hideSeparator()
         } else {
             // Middle cells
             cell.roundCorners([], radius: 0)
+            
         }
         
         return cell
-    }    
+    }
 }
