@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F5319F872A45E6EF006E4BBB /* OptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5319F862A45E6EF006E4BBB /* OptionCell.swift */; };
+		F5319F8C2A462D4B006E4BBB /* BetterSegmentedControl in Frameworks */ = {isa = PBXBuildFile; productRef = F5319F8B2A462D4B006E4BBB /* BetterSegmentedControl */; };
+		F5A559162A4711E400AF32A6 /* SelectedFoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A559152A4711E400AF32A6 /* SelectedFoodCell.swift */; };
 		F5C6A7062A3B441000B400AC /* FixelText-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5C6A6FD2A3B440F00B400AC /* FixelText-Thin.ttf */; };
 		F5C6A7072A3B441000B400AC /* FixelText-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5C6A6FE2A3B440F00B400AC /* FixelText-Light.ttf */; };
 		F5C6A7082A3B441000B400AC /* FixelText-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5C6A6FF2A3B440F00B400AC /* FixelText-Medium.ttf */; };
@@ -17,13 +20,14 @@
 		F5C6A70D2A3B441000B400AC /* FixelText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5C6A7042A3B441000B400AC /* FixelText-Regular.ttf */; };
 		F5C6A70E2A3B441000B400AC /* FixelText-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5C6A7052A3B441000B400AC /* FixelText-ExtraBold.ttf */; };
 		F5C6A7102A3B814C00B400AC /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C6A70F2A3B814C00B400AC /* SearchBar.swift */; };
-		F5C6A7122A3BBB4800B400AC /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C6A7112A3BBB4800B400AC /* ProductCell.swift */; };
-		F5C6A7142A3BC72900B400AC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C6A7132A3BC72900B400AC /* Model.swift */; };
+		F5C6A7122A3BBB4800B400AC /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C6A7112A3BBB4800B400AC /* FoodCell.swift */; };
+		F5C6A7142A3BC72900B400AC /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C6A7132A3BC72900B400AC /* Food.swift */; };
 		F5C6A71A2A3C897400B400AC /* AddMealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C6A7192A3C897400B400AC /* AddMealView.swift */; };
-		F5C6A7202A3C960000B400AC /* BetterSegmentedControl in Frameworks */ = {isa = PBXBuildFile; productRef = F5C6A71F2A3C960000B400AC /* BetterSegmentedControl */; };
 		F5C6A7232A3C9D3300B400AC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C6A7222A3C9D3300B400AC /* UIColorExtension.swift */; };
 		F5C6A7282A3DDEDA00B400AC /* UICornerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C6A7272A3DDEDA00B400AC /* UICornerExtension.swift */; };
 		F5C6A72B2A3DE10700B400AC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F5C6A72A2A3DE10700B400AC /* SnapKit */; };
+		F5C9A5C02A4635AE00E718EE /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C9A5BF2A4635AE00E718EE /* Meal.swift */; };
+		F5C9A5C32A46598D00E718EE /* MealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C9A5C22A46598D00E718EE /* MealCell.swift */; };
 		F5ED82872A373E2400D89D44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED82862A373E2400D89D44 /* AppDelegate.swift */; };
 		F5ED82892A373E2400D89D44 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED82882A373E2400D89D44 /* SceneDelegate.swift */; };
 		F5ED828B2A373E2400D89D44 /* AddMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED828A2A373E2400D89D44 /* AddMealViewController.swift */; };
@@ -32,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F5319F862A45E6EF006E4BBB /* OptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCell.swift; sourceTree = "<group>"; };
+		F5A559152A4711E400AF32A6 /* SelectedFoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedFoodCell.swift; sourceTree = "<group>"; };
 		F5C6A6FD2A3B440F00B400AC /* FixelText-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FixelText-Thin.ttf"; sourceTree = "<group>"; };
 		F5C6A6FE2A3B440F00B400AC /* FixelText-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FixelText-Light.ttf"; sourceTree = "<group>"; };
 		F5C6A6FF2A3B440F00B400AC /* FixelText-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FixelText-Medium.ttf"; sourceTree = "<group>"; };
@@ -42,11 +48,13 @@
 		F5C6A7042A3B441000B400AC /* FixelText-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FixelText-Regular.ttf"; sourceTree = "<group>"; };
 		F5C6A7052A3B441000B400AC /* FixelText-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FixelText-ExtraBold.ttf"; sourceTree = "<group>"; };
 		F5C6A70F2A3B814C00B400AC /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
-		F5C6A7112A3BBB4800B400AC /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
-		F5C6A7132A3BC72900B400AC /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		F5C6A7112A3BBB4800B400AC /* FoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
+		F5C6A7132A3BC72900B400AC /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		F5C6A7192A3C897400B400AC /* AddMealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealView.swift; sourceTree = "<group>"; };
 		F5C6A7222A3C9D3300B400AC /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		F5C6A7272A3DDEDA00B400AC /* UICornerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICornerExtension.swift; sourceTree = "<group>"; };
+		F5C9A5BF2A4635AE00E718EE /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		F5C9A5C22A46598D00E718EE /* MealCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCell.swift; sourceTree = "<group>"; };
 		F5ED82832A373E2400D89D44 /* TestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5ED82862A373E2400D89D44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5ED82882A373E2400D89D44 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,8 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5C6A7202A3C960000B400AC /* BetterSegmentedControl in Frameworks */,
 				F5C6A72B2A3DE10700B400AC /* SnapKit in Frameworks */,
+				F5319F8C2A462D4B006E4BBB /* BetterSegmentedControl in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,17 +98,12 @@
 			children = (
 				F5C6A7192A3C897400B400AC /* AddMealView.swift */,
 				F5C6A70F2A3B814C00B400AC /* SearchBar.swift */,
-				F5C6A7112A3BBB4800B400AC /* ProductCell.swift */,
+				F5C6A7112A3BBB4800B400AC /* FoodCell.swift */,
+				F5319F862A45E6EF006E4BBB /* OptionCell.swift */,
+				F5A559152A4711E400AF32A6 /* SelectedFoodCell.swift */,
+				F5C9A5C22A46598D00E718EE /* MealCell.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		F5C6A7162A3BC76A00B400AC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				F5C6A7132A3BC72900B400AC /* Model.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		F5C6A7172A3C750200B400AC /* Resources */ = {
@@ -130,6 +133,15 @@
 			path = UIExtensions;
 			sourceTree = "<group>";
 		};
+		F5C9A5C12A46376B00E718EE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F5C6A7132A3BC72900B400AC /* Food.swift */,
+				F5C9A5BF2A4635AE00E718EE /* Meal.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F5ED827A2A373E2400D89D44 = {
 			isa = PBXGroup;
 			children = (
@@ -155,7 +167,7 @@
 				F5C6A6FC2A3B43D300B400AC /* Fonts */,
 				F5C6A7152A3BC73500B400AC /* Views */,
 				F5C6A7182A3C754100B400AC /* Controller */,
-				F5C6A7162A3BC76A00B400AC /* Model */,
+				F5C9A5C12A46376B00E718EE /* Models */,
 				F5C6A7172A3C750200B400AC /* Resources */,
 			);
 			path = TestTask;
@@ -178,8 +190,8 @@
 			);
 			name = TestTask;
 			packageProductDependencies = (
-				F5C6A71F2A3C960000B400AC /* BetterSegmentedControl */,
 				F5C6A72A2A3DE10700B400AC /* SnapKit */,
+				F5319F8B2A462D4B006E4BBB /* BetterSegmentedControl */,
 			);
 			productName = TestTask;
 			productReference = F5ED82832A373E2400D89D44 /* TestTask.app */;
@@ -210,8 +222,8 @@
 			);
 			mainGroup = F5ED827A2A373E2400D89D44;
 			packageReferences = (
-				F5C6A71E2A3C960000B400AC /* XCRemoteSwiftPackageReference "BetterSegmentedControl" */,
 				F5C6A7292A3DE10700B400AC /* XCRemoteSwiftPackageReference "SnapKit" */,
+				F5319F8A2A462D4A006E4BBB /* XCRemoteSwiftPackageReference "BetterSegmentedControl" */,
 			);
 			productRefGroup = F5ED82842A373E2400D89D44 /* Products */;
 			projectDirPath = "";
@@ -248,13 +260,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5319F872A45E6EF006E4BBB /* OptionCell.swift in Sources */,
 				F5ED828B2A373E2400D89D44 /* AddMealViewController.swift in Sources */,
 				F5C6A7102A3B814C00B400AC /* SearchBar.swift in Sources */,
+				F5C9A5C32A46598D00E718EE /* MealCell.swift in Sources */,
+				F5C9A5C02A4635AE00E718EE /* Meal.swift in Sources */,
 				F5C6A7282A3DDEDA00B400AC /* UICornerExtension.swift in Sources */,
-				F5C6A7122A3BBB4800B400AC /* ProductCell.swift in Sources */,
+				F5C6A7122A3BBB4800B400AC /* FoodCell.swift in Sources */,
 				F5C6A7232A3C9D3300B400AC /* UIColorExtension.swift in Sources */,
+				F5A559162A4711E400AF32A6 /* SelectedFoodCell.swift in Sources */,
 				F5C6A71A2A3C897400B400AC /* AddMealView.swift in Sources */,
-				F5C6A7142A3BC72900B400AC /* Model.swift in Sources */,
+				F5C6A7142A3BC72900B400AC /* Food.swift in Sources */,
 				F5ED82872A373E2400D89D44 /* AppDelegate.swift in Sources */,
 				F5ED82892A373E2400D89D44 /* SceneDelegate.swift in Sources */,
 			);
@@ -474,7 +490,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F5C6A71E2A3C960000B400AC /* XCRemoteSwiftPackageReference "BetterSegmentedControl" */ = {
+		F5319F8A2A462D4A006E4BBB /* XCRemoteSwiftPackageReference "BetterSegmentedControl" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/gmarm/BetterSegmentedControl.git";
 			requirement = {
@@ -493,9 +509,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F5C6A71F2A3C960000B400AC /* BetterSegmentedControl */ = {
+		F5319F8B2A462D4B006E4BBB /* BetterSegmentedControl */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F5C6A71E2A3C960000B400AC /* XCRemoteSwiftPackageReference "BetterSegmentedControl" */;
+			package = F5319F8A2A462D4A006E4BBB /* XCRemoteSwiftPackageReference "BetterSegmentedControl" */;
 			productName = BetterSegmentedControl;
 		};
 		F5C6A72A2A3DE10700B400AC /* SnapKit */ = {

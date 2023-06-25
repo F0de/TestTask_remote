@@ -1,5 +1,5 @@
 //
-//  ProductCell.swift
+//  FoodCell.swift
 //  TestTask
 //
 //  Created by Влад Тимчук on 16.06.2023.
@@ -8,15 +8,19 @@
 import UIKit
 import SnapKit
 
-class ProductCell: UITableViewCell {
+class FoodCell: UITableViewCell {
 
-    static let identifier = "ProductCell"
+    static let identifier = "FoodCell"
     private let separator = UIView()
     private let backroundCircleView = UIView()
     private let iconView = UIImageView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
+        
+        // separator
+        separator.backgroundColor = .separator
+        contentView.addSubview(separator)
         
         // textLabel
         textLabel?.font = UIFont(name: "FixelText-Medium", size: 16)
@@ -35,16 +39,13 @@ class ProductCell: UITableViewCell {
         let iconImage = UIImage(named: "Fork-Spoon")
         iconView.image = iconImage
         
-        // separator
-        separator.backgroundColor = .separator
-        contentView.addSubview(separator)
-        
         //MARK: - Layout
+        
         separator.snp.makeConstraints { make in
             make.height.equalTo(1/UIScreen.main.scale)
             make.bottom.equalToSuperview()
             make.left.equalToSuperview()
-            make.right.equalToSuperview()
+            make.right.equalToSuperview().offset(70)
         }
         
         backroundCircleView.snp.makeConstraints { make in
@@ -80,8 +81,35 @@ class ProductCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func chooseTextForCell(cell: FoodCell, indexPath: IndexPath) {
+        cell.textLabel?.text = Food.foodList[indexPath.row].name
+        cell.detailTextLabel?.text = "\(Food.foodList[indexPath.row].weight)г, \(Food.foodList[indexPath.row].calories) ккал"
+        let accessoryLabel = UILabel()
+        accessoryLabel.text = "\(Food.foodList[indexPath.row].addedDate)"
+        accessoryLabel.font = UIFont(name: "FixelText-Medium", size: 12)
+        accessoryLabel.textColor = UIColor(hex: "#8C94A6")
+        accessoryLabel.sizeToFit()
+        cell.accessoryView = accessoryLabel
+    }
+    
+    func cellStyle(indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            // First cell in section
+            roundCorners([.topLeft, .topRight], radius: 16)
+            showSeparator()
+        } else if indexPath.row == 1 {
+            // Last cell in section
+            roundCorners([.bottomLeft, .bottomRight], radius: 16)
+            hideSeparator()
+        }
+    }
+    
     func hideSeparator() {
         separator.isHidden = true
+    }
+    
+    func showSeparator() {
+        separator.isHidden = false
     }
     
 }
